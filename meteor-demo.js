@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
-  Template.insertProfileForm.helpers({
-    posts: function() {
-      return posts;
+  Template.profilesList.helpers({
+    profiles: function() {
+      return Profiles.find();
     }
   });
 }
