@@ -11,3 +11,4 @@ aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
 mizzao:bootstrap-3
+iron:router
