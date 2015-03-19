@@ -1,4 +1,4 @@
-Meteor.Subscribe('profiles');
+Meteor.subscribe('profiles');
 
 Template.profilesList.helpers({
 	profilesList: function() {
