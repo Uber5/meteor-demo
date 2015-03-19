@@ -1,7 +1,7 @@
 Meteor.Subscribe('profiles');
 
 Template.profilesList.helpers({
-	profiles: function(){
+	profilesList: function() {
 		return Profiles.find();
 	}
 });
