@@ -1,5 +1,7 @@
 <template name="profilesList">
-  	<h2>List of Profiles.</h2>
+	<div>{{> profileInsert }}</div>
+  	<hr>
+  	<h2>We have {{ profilesCount }} profiles.</h2>
   	<ul>
   		{{ #each profilesList }}
   			<li>
