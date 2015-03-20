@@ -1,0 +1,11 @@
+<template name="profileUpdate">
+  {{#autoForm collection="Profiles" doc=this id="profileInsert" type="update" }}
+	<fieldset>
+		<legend>Update Profile.</legend>
+		{{> afQuickField name="first_name"}}
+		{{> afQuickField name="last_name"}}
+		{{> afQuickField name="email"}}
+	</fieldset>
+	<button type="submit" class="btn btn-primary btn-lg">Update</button>
+	{{/autoForm}}
+</template>
