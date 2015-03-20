@@ -2,7 +2,11 @@
   	<h2>List of Profiles.</h2>
   	<ul>
   		{{ #each profilesList }}
-  			<li>{{ first_name }}: {{ email }}</li>
+  			<li>
+  				<a href="{{ pathFor 'profileView' }}">
+					{{> profileView }}
+  				</a>
+  			</li>
   		{{ /each }}
   	</ul>
 </template>
