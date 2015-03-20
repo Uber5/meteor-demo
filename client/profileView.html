@@ -1,6 +1,8 @@
 <template name="profileView">
 	<div class="post-page page">
-		{{ first_name }}: {{ email }}
+		<span>First Name: {{ first_name }} <br/></span>
+		<span>Last Name: {{ last_name }} <br/></span>
+		<span>Email: {{ email }}</span>
 	</div>
 	<a href="{{ pathFor 'profileUpdate' }}">Update Profile</a>
 </template>

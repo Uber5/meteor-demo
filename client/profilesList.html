@@ -6,8 +6,9 @@
   		{{ #each profilesList }}
 		<form>
 			<li>
+				<a class="btn btn-primary" href="{{ pathFor 'profileUpdate' }}">Update</a>
 				<a class="btn btn-danger delete" href="#">Delete</a>
-				<a href="{{ pathFor 'profileView' }}">{{ first_name }}: {{ email }}</a>
+				<a href="{{ pathFor 'profileView' }}">{{ first_name }} {{ last_name }}</a>
 			</li>
 			<br/>
 		</form>
