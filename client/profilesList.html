@@ -4,7 +4,7 @@
   		{{ #each profilesList }}
   			<li>
   				<a href="{{ pathFor 'profileView' }}">
-					{{> profileView }}
+					{{ first_name }}: {{ email }}
   				</a>
   			</li>
   		{{ /each }}
