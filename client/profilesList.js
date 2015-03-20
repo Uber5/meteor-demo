@@ -8,3 +8,14 @@ Template.profilesList.helpers({
 		return Profiles.find().count();
 	}
 });
+
+Template.profilesList.events({
+	'click .delete': function(e) {
+		e.preventDefault();
+		var profileId = this._id;
+		if (confirm("Delete this Profile?")) {
+			Profiles.remove(profileId);
+			Router.go('profilesList');
+		}
+	}
+});
