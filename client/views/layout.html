@@ -4,9 +4,9 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="{{pathFor 'profilesList'}}">Home</a>
 				</div>
-				<div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{ pathFor 'profileInsert' }}">Create Profile</a></li>
+						{{> loginButtons }}
 					</ul>
 				</div>
 		</header>
