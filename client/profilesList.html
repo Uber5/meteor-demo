@@ -2,13 +2,15 @@
 	<div>{{> profileInsert }}</div>
   	<hr>
   	<h2>We have {{ profilesCount }} profiles.</h2>
-  	<ul>
+  	<ul class='list-unstyled'>
   		{{ #each profilesList }}
-  			<li>
-  				<a href="{{ pathFor 'profileView' }}">
-					{{ first_name }}: {{ email }}
-  				</a>
-  			</li>
+		<form>
+			<li>
+				<button type="submit" class="btn btn-danger delete">Delete</button>
+				<a href="{{ pathFor 'profileView' }}">{{ first_name }}: {{ email }}</a>
+			</li>
+			<br/>
+		</form>
   		{{ /each }}
   	</ul>
 </template>
