@@ -17,3 +17,14 @@ Template.profilesList.events({
 		}
 	}
 });
+
+AutoForm.addHooks(['profileUpdate', 'profileInsert'], {
+	after: {
+		update: function() {
+			return Router.go('/');
+		},
+		insert: function() {
+			return Router.go('/');	
+		}
+	}
+});

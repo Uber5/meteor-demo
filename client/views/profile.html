@@ -10,7 +10,7 @@
 </template>
 
 <template name="profileInsert">
-	{{#autoForm collection="Profiles" type="insert" }}
+	{{#autoForm collection="Profiles" id="profileInsert" type="insert" }}
 	<fieldset>
 		<legend>Create a new Profile.</legend>
 		{{> afQuickField name="first_name"}}
@@ -22,7 +22,7 @@
 </template>
 
 <template name="profileUpdate">
-  {{#autoForm collection="Profiles" doc=this id="profileInsert" type="update" }}
+  {{#autoForm collection="Profiles" doc=this id="profileUpdate" type="update" }}
 	<fieldset>
 		<legend>Update Profile.</legend>
 		{{> afQuickField name="first_name"}}
