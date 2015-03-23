@@ -4,5 +4,7 @@
 		<span>Last Name: {{ last_name }} <br/></span>
 		<span>Email: {{ email }}</span>
 	</div>
-	<a href="{{ pathFor 'profileUpdate' }}">Update Profile</a>
+	{{#if currentUser}}
+		<a href="{{ pathFor 'profileUpdate' }}">Update Profile</a>
+	{{/if}}
 </template>
