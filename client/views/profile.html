@@ -1,0 +1,56 @@
+<template name="profileView">
+	<div class="post-page page">
+		<span>First Name: {{ first_name }} <br/></span>
+		<span>Last Name: {{ last_name }} <br/></span>
+		<span>Email: {{ email }}</span>
+	</div>
+	{{#if currentUser}}
+		<a href="{{ pathFor 'profileUpdate' }}">Update Profile</a>
+	{{/if}}
+</template>
+
+<template name="profileInsert">
+	{{#autoForm collection="Profiles" type="insert" }}
+	<fieldset>
+		<legend>Create a new Profile.</legend>
+		{{> afQuickField name="first_name"}}
+		{{> afQuickField name="last_name"}}
+		{{> afQuickField name="email"}}
+	</fieldset>
+	<button type="submit" class="btn btn-primary btn-lg">Create</button>
+	{{/autoForm}}
+</template>
+
+<template name="profileUpdate">
+  {{#autoForm collection="Profiles" doc=this id="profileInsert" type="update" }}
+	<fieldset>
+		<legend>Update Profile.</legend>
+		{{> afQuickField name="first_name"}}
+		{{> afQuickField name="last_name"}}
+		{{> afQuickField name="email"}}
+	</fieldset>
+	<button type="submit" class="btn btn-primary btn-lg">Update</button>
+	{{/autoForm}}
+</template>
+
+<template name="profilesList">
+	{{#if currentUser}}
+		<div class="page jumbotron">
+		{{> profileInsert }}
+		</div>
+	{{/if}}
+  	<hr>
+  	<h2>We have {{ profilesCount }} profile(s).</h2>
+  	<ul class='list-unstyled'>
+  		{{ #each profilesList }}
+		<form>
+			<li>
+				<a class="btn btn-primary" href="{{ pathFor 'profileUpdate' }}">Update</a>
+				<a class="btn btn-danger delete" href="#">Delete</a>
+				<a href="{{ pathFor 'profileView' }}">{{ first_name }} {{ last_name }}</a>
+			</li>
+			<br/>
+		</form>
+  		{{ /each }}
+  	</ul>
+</template>
