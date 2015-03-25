@@ -27,4 +27,4 @@ AutoForm.addHooks(['profileUpdate', 'profileInsert'], {
 			return Router.go('/');	
 		}
 	}
-});
+});																																																																																																																																																																																																																																																																																																																																																																																																																				
