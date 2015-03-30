@@ -13,4 +13,10 @@ if (Meteor.isServer) {
       requestPermissions: [ 'email', 'userinfo', 'openid' ]
     });   
   });
+
+  Meteor.methods({
+    getFromRESTService: function() {
+      return Meteor.http.get("http://localhost:8000/api/profiles");
+    }
+  });
 }
