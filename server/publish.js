@@ -6,12 +6,12 @@ Meteor.publish('profiles', function() {
 var refreshItems = function() {
   var response = Meteor.http.get("http://localhost:8000/api/profiles");
   var items = response.content;
-  console.log(items);
-  Items.remove({id: { $nin: _.map(items, function(item) { return item.id; })}});
+  Items.remove({
+  	id: { $nin: _.map(items, function(item) { return item.id; })}
+  });
   _.each(items, function(item) {
     Items.upsert({ id: +item.id }, 
     {
-    	// What is the '+' doing?
       id: +item.id,
       name: item.first_name,
     });
