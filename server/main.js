@@ -13,25 +13,26 @@ if (Meteor.isServer) {
       requestPermissions: [ 'email', 'userinfo', 'openid' ]
     });   
   });
-}
 
-Meteor.methods({
-  getFromRESTService: function() {
-    return Meteor.http.get("http://localhost:8000/api/profiles");
-  },
-  addWithRESTService: function(item) {
-    Meteor.http.post("http://localhost:8000/api/profiles", item, function(error, result) {
-      // return result.
-    });
-  },
-  putWithRESTService: function(item) {
-    Meteor.http.put("http://localhost:8000/api/profiles/:_id", item, function(error, response) {
-      // return result.
-    });
-  },
-  deleteWithRESTService: function(item) {
-    Meteor.http.del("http://localhost:8000/api/profiles/:_id", item, function(error, response) {
-      // return result.
-    });
-  }
-});
+  Meteor.methods({
+    getFromRESTService: function() {
+      var items = Meteor.http.get("http://localhost:8000/api/profiles");
+      return items;
+    },
+    addWithRESTService: function(item) {
+      Meteor.http.post("http://localhost:8000/api/profiles", item, function(error, result) {
+        // return result.
+      });
+    },
+    putWithRESTService: function(item) {
+      Meteor.http.put("http://localhost:8000/api/profiles/:_id", item, function(error, response) {
+        // return result.
+      });
+    },
+    deleteWithRESTService: function(item) {
+      Meteor.http.del("http://localhost:8000/api/profiles/:_id", item, function(error, response) {
+        // return result.
+      });
+    }
+  });
+}
