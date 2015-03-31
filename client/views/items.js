@@ -15,35 +15,10 @@ Template.items.events({
 		};
 		Meteor.call('addWithRESTService', input, function(error, result) {
 			if (error) {
-				return error;
+				alert(error);
 			}	else {
-				refreshItems();
-				return result;
+				alert("Insert successful.");
 			}
 		});
 	}
 });
-
-var refreshItems = function() {
-  var response = Meteor.call('getFromRESTService',
-  	function(error, result) {
-  				// Contains objects.
-  				alert("Result: " + result);
-		  		return result;
-	});
-  
-  // Is undefined.
-  alert("Response: " + response);
-
-  var items = JSON.parse(response.content);
-  Items.remove({
-  	id: { $nin: _.map(items, function(item) { return item.id; })}
-  });
-   _.each(items, function(item) {
-    Items.upsert({ id: +item.id },
-    {
-      id: +item.id,
-      name: item.first_name,
-    });
-  });
-}

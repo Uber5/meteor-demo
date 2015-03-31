@@ -20,9 +20,7 @@ if (Meteor.isServer) {
       return items;
     },
     addWithRESTService: function(item) {
-      Meteor.http.post("http://localhost:8000/api/profiles", item, function(error, result) {
-        // return result.
-      });
+      Meteor.http.post("http://localhost:8000/api/profiles", { data: item });
     },
     putWithRESTService: function(item) {
       Meteor.http.put("http://localhost:8000/api/profiles/:_id", item, function(error, response) {
