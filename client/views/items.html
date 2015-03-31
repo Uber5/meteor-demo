@@ -1,14 +1,20 @@
 <template name="items">
 	<h2>Here are the external Profile ID's.</h2>
 	{{ #each itemsList }}
-  <p>Item ID: {{ _id }}, Profile ID: {{ id }}, name: {{ name }}</p>
+  <p>ID: {{ id }}, Name: {{ name }}</p>
 	{{ /each }}
 
-	<h2>Create Profile externally.</h2>
+	<h2>Create New Profile externally.</h2>
 	<form id="create-form">
 		<input name="first_name" type="text" placeholder="First Name">
 		<input name="last_name" type="text" placeholder="Last Name">
 		<input name="email" type="email" placeholder="Email Address">
 		<button type="submit" class="create">Create</button>
+	</form>
+
+	<h2>Remove External Profile with ID</h2>
+	<form id="delete-form">
+		<input name="profile_id" type="text" placeholder="ID">
+		<button type="submit" class="delete">Delete</button>
 	</form>
 </template>

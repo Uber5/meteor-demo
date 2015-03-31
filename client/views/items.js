@@ -16,8 +16,17 @@ Template.items.events({
 		Meteor.call('addWithRESTService', input, function(error, result) {
 			if (error) {
 				alert(error);
-			}	else {
-				alert("Insert successful.");
+			}
+		});
+	},
+
+	"click .delete": function(e) {
+		e.preventDefault();
+
+		var id = $("[name='profile_id']").val();
+		Meteor.call('deleteWithRESTService', id, function(error, result) {
+			if (error) {
+				alert(error);
 			}
 		});
 	}

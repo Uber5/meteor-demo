@@ -7,8 +7,8 @@ Meteor.publish('items', function() {
 		return Items.find();
 });
 
-var refreshItems = function() {
-  var response = Meteor.call('getFromRESTService');
+refreshItems = function() {
+  var response = Meteor.http.get("http://localhost:8000/api/profiles");
   var items = JSON.parse(response.content);
   Items.remove({
   	id: { $nin: _.map(items, function(item) { return item.id; })}
