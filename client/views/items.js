@@ -29,5 +29,21 @@ Template.items.events({
 				alert(error);
 			}
 		});
+	},
+
+	"click .update": function(e) {
+		e.preventDefault();
+
+		var input = {
+			"id": $("[name='update_id']").val(),
+			"first_name": $("[name='update_first_name']").val(),
+			"last_name": $("[name='update_last_name']").val(),
+			"email": $("[name='update_email']").val()
+		};
+		Meteor.call('putWithRESTService', input, function(error, result) {
+			if (error) {
+				alert(error);
+			}
+		});
 	}
 });
